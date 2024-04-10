@@ -1,0 +1,38 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block header %} {% endblock %}
+
+{% block reviews %} {% endblock reviews %}
+
+{% block services %} {% endblock services %}
+
+{% block login %}
+<body>
+    
+    {% for Moderador in Mods %}
+
+    <p>Nombre: {{Moderador.nombre}}</p>
+    <p>Apellido: {{Moderador.apellido}}</p>
+    <p>Edad: {{Moderador.edad}}</p>
+    <p>Correo: {{Moderador.correo}}</p>
+
+    <button>
+        <a href="{% url 'Eliminar_Moderadores' Moderador.nombre %}"> Eliminar Moderador</a>
+    </button>
+    <button>
+        <a href="{% url 'Editar_Moderadores' Moderador.nombre %}"> Editar Moderador</a>
+    </button>
+
+    {% endfor %}
+<br>
+<br>
+<br>
+    <button>
+    <a href="{% url 'Crear_Moderadores' %}"> Crear Moderador</a>
+    </button>
+
+
+</body>
+{% endblock login %}
+</html>

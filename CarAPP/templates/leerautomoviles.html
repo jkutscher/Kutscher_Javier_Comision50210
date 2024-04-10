@@ -1,0 +1,41 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block header %} {% endblock %}
+
+{% block reviews %} {% endblock reviews %}
+
+{% block services %} {% endblock services %}
+
+{% block login %}
+
+<body>
+    
+    {% for Automovil in Autos %}
+
+    <p>Marca: {{Automovil.marca}}</p>
+    <p>Modelo: {{Automovil.modelo}}</p>
+    <p>Año: {{Automovil.año}}</p>
+    <p>Categoria: {{Automovil.categoria}}</p>
+
+    <button>
+        <a href="{% url 'Eliminar_Automoviles' Automovil.marca %}"> Eliminar Automóvil </a>
+    </button>
+    <button>
+        <a href="{% url 'Editar_Automoviles' Automovil.marca %}"> Editar Automóvil</a>
+    </button>
+   <br>
+   <br>
+   
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <button>
+    <a href="{% url 'Crear_Automoviles' %}"> Crear Automóvil</a>
+    </button>
+
+
+</body>
+{% endblock login %}
+</html>

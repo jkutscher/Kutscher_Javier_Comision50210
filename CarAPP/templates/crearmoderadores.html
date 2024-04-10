@@ -1,0 +1,31 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block header %} {% endblock %}
+
+{% block reviews %} {% endblock reviews %}
+
+{% block services %} {% endblock services %}
+
+{% block login %}
+<div style="display: flex; justify-content: center">
+<body>
+    
+
+    <form action="" method="POST"> {%csrf_token %}
+
+
+        <table>
+
+            {{form1.as_table}}
+
+        </table>
+
+        <input type="submit" value="Enviar">
+
+
+    </form>
+</body>
+</div>
+{% endblock login %}
+</html>

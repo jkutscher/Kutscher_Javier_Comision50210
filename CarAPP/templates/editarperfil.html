@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block header %} {% endblock %}
+
+{% block reviews %} {% endblock reviews %}
+
+{% block services %} {% endblock services %}
+
+{% block login %}
+
+<div style="display: flex; justify-content: center">
+    <h1>Actualiza tus datos.</h1>
+</div>
+<br>
+
+<div style="display: flex; justify-content: center">
+
+    <form action="" method="POST"> {% csrf_token %}
+
+     {{formulario.as_p}}
+
+     <button type="submit">Actualizar</button>
+
+    </form>
+</div>
+
+{% endblock login %}
