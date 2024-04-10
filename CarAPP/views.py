@@ -282,19 +282,19 @@ def leerAutomoviles(request):
 @login_required
 def eliminarAutomoviles(request, autosNombre):
 
-    automovil = Automóvil.objects.get(nombre=autosNombre)
+    automovil = Automóvil.objects.get(marca=autosNombre)
     automovil.delete()
 
     automovil = Automóvil.objects.all()
 
     contexto = {"Autos": automovil}
 
-    return render(request, "leerautomovil.html", contexto)
+    return render(request, "leerautomoviles.html", contexto)
 
 @login_required
 def editarAutomoviles(request, autosNombre):
 
-    automovil = Automóvil.objects.get(nombre=autosNombre)
+    automovil = Automóvil.objects.get(marca=autosNombre)
 
     if request.method == "POST":
 
@@ -338,6 +338,6 @@ def agregarAvatar(request):
         
     else:
 
-        form = AvatarFormulario
+        form = AvatarFormulario()
     
-    return render(request, "agregaravatar.html", {"formulario", form})
+    return render(request, "agregaravatar.html", {"formulario": form})

@@ -30,7 +30,7 @@ urlpatterns = [
 #CRUD de Automoviles usando clases
     path('crearautomoviles/', crearAutomoviles, name="Crear_Automoviles"),
     path('leerautomoviles/', leerAutomoviles, name="Leer_Automoviles"),
-    path('eliminarautomoviles/<autobNombre>/', eliminarAutomoviles, name="Eliminar_Automoviles"),
-    path('editarautomoviles/<autobNombre>', editarAutomoviles, name="Editar_Automoviles"),
+    path('eliminarautomoviles/<autosNombre>/', eliminarAutomoviles, name="Eliminar_Automoviles"),
+    path('editarautomoviles/<autosNombre>', editarAutomoviles, name="Editar_Automoviles"),
 
 ]
